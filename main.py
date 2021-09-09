@@ -1,6 +1,3 @@
-#  python3 -m venv work
-# source work/bin/activate 
-# pip install opencv-python
 import cv2
 import numpy as np
 

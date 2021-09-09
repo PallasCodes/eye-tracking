@@ -16,7 +16,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**3. Correr proyecto**
+**4. Correr proyecto**
 ```
 python3 main.py
 ```
