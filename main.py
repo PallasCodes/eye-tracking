@@ -3,10 +3,8 @@ import numpy as np
 import csv
 
 cap = cv2.VideoCapture("ojo2.mp4")
-contador = 0
 
 while True:
-    contador = contador + 30
     ret, frame = cap.read()
     if ret is False:
         break
@@ -34,11 +32,10 @@ while True:
     cv2.imshow("Roi", roi)
     key = cv2.waitKey(30)
 
-    if contador % 30 == 0:
-        print(x, y)
-        f = open("registro.csv", "a", newline='')
-        writer = csv.writer(f)
-        writer.writerow([x, y])
-        f.close()
+    print(x, y)
+    f = open("registro.csv", "a", newline='')
+    writer = csv.writer(f)
+    writer.writerow([x, y])
+    f.close()
 
 cv2.destroyAllWindows()
