@@ -38,8 +38,7 @@ while True:
         print(x, y)
         f = open("registro.csv", "a", newline='')
         writer = csv.writer(f)
-        writer.writerow([x])
-        writer.writerow([y])
+        writer.writerow([x, y])
         f.close()
 
 cv2.destroyAllWindows()
