@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import csv
 
 cap = cv2.VideoCapture("ojo2.mp4")
 contador = 0
@@ -35,8 +36,10 @@ while True:
 
     if contador % 30 == 0:
         print(x, y)
-        f = open("registro.txt", "a")
-        f.write("\nCoordenada X: " + str(x) + "Coordenada Y: " + str(y))
+        f = open("registro.csv", "a", newline='')
+        writer = csv.writer(f)
+        writer.writerow([x])
+        writer.writerow([y])
         f.close()
 
 cv2.destroyAllWindows()
